@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pantallas y niños — Guía para familias</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, sans-serif; background: #f5f4f0; color: #1a1a18; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+  .hero { text-align: center; margin-bottom: 2rem; }
+  .hero h1 { font-size: 26px; font-weight: 500; margin-bottom: 8px; }
+  .hero p { font-size: 14px; color: #666; }
+  .tab-row { display: flex; gap: 6px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .tab { padding: 8px 16px; border-radius: 8px; border: 1px solid #ccc; font-size: 13px; cursor: pointer; background: white; color: #555; transition: all 0.15s; }
+  .tab.active { background: #1D9E75; color: #E1F5EE; border-color: #1D9E75; font-weight: 500; }
+  .tab:hover:not(.active) { background: #f0efe8; }
+  .panel { display: none; }
+  .panel.active { display: block; }
+  .age-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 1.5rem; }
+  .age-card { background: white; border: 1px solid #e0dfd8; border-radius: 12px; padding: 1rem; text-align: center; }
+  .age-badge { display: inline-block; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; margin-bottom: 8px; }
+  .red { background: #FCEBEB; color: #A32D2D; }
+  .amber { background: #FAEEDA; color: #854F0B; }
+  .green { background: #EAF3DE; color: #3B6D11; }
+  .age-card .time { font-size: 22px; font-weight: 500; margin-bottom: 4px; }
+  .age-card .age-label { font-size: 12px; color: #666; line-height: 1.4; }
+  .section-title { font-size: 15px; font-weight: 500; margin: 1.2rem 0 0.7rem; }
+  .tip-list { display: flex; flex-direction: column; gap: 8px; }
+  .tip { display: flex; gap: 10px; align-items: flex-start; background: white; border-radius: 8px; padding: 10px 12px; border: 1px solid #e8e7e0; }
+  .tip-icon { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 15px; }
+  .ic-teal { background: #9FE1CB; }
+  .ic-blue { background: #B5D4F4; }
+  .ic-amber { background: #FAC775; }
+  .ic-coral { background: #F5C4B3; }
+  .tip-text { font-size: 13px; line-height: 1.55; }
+  .tip-text strong { font-weight: 500; }
+  .info-box { background: #E1F5EE; border-radius: 8px; padding: 10px 14px; font-size: 13px; color: #0F6E56; margin-top: 0.8rem; display: flex; gap: 8px; align-items: flex-start; }
+  .alert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
+  .alert-card { background: #FCEBEB; border: 1px solid #F09595; border-radius: 8px; padding: 10px 12px; }
+  .alert-title { font-size: 12px; font-weight: 500; color: #A32D2D; margin-bottom: 4px; }
+  .alert-desc { font-size: 12px; color: #7a3030; line-height: 1.45; }
+  .rule-list { display: flex; flex-direction: column; gap: 7px; }
+  .rule { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: white; border: 1px solid #e8e7e0; border-radius: 8px; font-size: 13px; }
+  .rule-num { width: 26px; height: 26px; border-radius: 50%; background: #9FE1CB; color: #085041; font-size: 12px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .source { margin-top: 2rem; padding: 8px 12px; background: #eeede7; border-radius: 8px; font-size: 11px; color: #888; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <h1>📱 Pantallas y niños</h1>
+    <p>Guía para familias basada en la OMS, Mayo Clinic y expertos en pediatría</p>
+  </div>
+
+  <div class="tab-row">
+    <button class="tab active" onclick="show('tiempos', this)">Tiempos por edad</button>
+    <button class="tab" onclick="show('consejos', this)">Consejos prácticos</button>
+    <button class="tab" onclick="show('alertas', this)">Señales de alerta</button>
+    <button class="tab" onclick="show('reglas', this)">Reglas en casa</button>
+  </div>
+
+  <div id="tiempos" class="panel active">
+    <p style="font-size:13px;color:#666;margin-bottom:1rem;">Tiempo máximo diario frente a pantallas según la OMS:</p>
+    <div class="age-grid">
+      <div class="age-card">
+        <span class="age-badge red">0 – 2 años</span>
+        <div class="time">0 min</div>
+        <div class="age-label">Sin pantallas. Solo videollamadas acompañado.</div>
+      </div>
+      <div class="age-card">
+        <span class="age-badge amber">2 – 5 años</span>
+        <div class="time">≤ 1 hora</div>
+        <div class="age-label">Siempre con un adulto y contenido de calidad.</div>
+      </div>
+      <div class="age-card">
+        <span class="age-badge green">6 – 12 años</span>
+        <div class="time">≤ 2 horas</div>
+        <div class="age-label">Con límites claros y supervisión del contenido.</div>
+      </div>
+      <div class="age-card">
+        <span class="age-badge green">12 – 17 años</span>
+        <div class="time">≤ 2 horas</div>
+        <div class="age-label">Excluye tiempo escolar. Acuerdos en familia.</div>
+      </div>
+    </div>
+    <div class="info-box">
+      <span>💡</span>
+      <span>La OMS no cuenta como "tiempo pasivo de pantalla" cuando el niño interactúa activamente, por ejemplo imitando un baile o haciendo una videollamada familiar.</span>
+    </div>
+  </div>
+
+  <div id="consejos" class="panel">
+    <div class="section-title">Uso acompañado</div>
+    <div class="tip-list">
+      <div class="tip"><div class="tip-icon ic-teal">👁️</div><div class="tip-text"><strong>Mira junto a tu hijo/a.</strong> Ver contenido juntos permite conversar sobre lo que pasa, lo que mejora el lenguaje y la comprensión.</div></div>
+      <div class="tip"><div class="tip-icon ic-blue">✔️</div><div class="tip-text"><strong>Revisa antes de mostrar.</strong> Previsualiza apps, videos y juegos. Plataformas como Common Sense Media tienen reseñas por edad.</div></div>
+      <div class="tip"><div class="tip-icon ic-amber">🔕</div><div class="tip-text"><strong>TV de fondo, fuera.</strong> Aunque nadie la esté mirando, la televisión encendida distrae el juego y reduce la interacción familiar.</div></div>
+    </div>
+    <div class="section-title">Alternativas saludables</div>
+    <div class="tip-list">
+      <div class="tip"><div class="tip-icon ic-teal">📖</div><div class="tip-text"><strong>Lectura en voz alta.</strong> Leer cuentos juntos estimula el lenguaje y el vínculo afectivo mejor que cualquier pantalla.</div></div>
+      <div class="tip"><div class="tip-icon ic-coral">🏃</div><div class="tip-text"><strong>Juego al aire libre.</strong> Actividades físicas y juego libre desarrollan habilidades motoras y sociales que las pantallas no reemplazan.</div></div>
+      <div class="tip"><div class="tip-icon ic-blue">🎨</div><div class="tip-text"><strong>Juego no estructurado.</strong> Bloques, dibujo, imaginación — el tiempo desconectado es el más valioso para el cerebro en desarrollo.</div></div>
+    </div>
+    <div class="section-title">El ejemplo de los adultos</div>
+    <div class="tip-list">
+      <div class="tip"><div class="tip-icon ic-amber">👨‍👩‍👧</div><div class="tip-text"><strong>Da el ejemplo.</strong> Los niños imitan a los adultos. Evita usar pantallas durante las comidas, el juego o los momentos de familia.</div></div>
+    </div>
+  </div>
+
+  <div id="alertas" class="panel">
+    <p style="font-size:13px;color:#666;margin-bottom:1rem;">Señales de que el uso puede ser excesivo o problemático:</p>
+    <div class="alert-grid">
+      <div class="alert-card"><div class="alert-title">Trastornos del sueño</div><div class="alert-desc">Dificultad para dormir, despiertan de noche, cansancio crónico.</div></div>
+      <div class="alert-card"><div class="alert-title">Irritabilidad al quitar</div><div class="alert-desc">Berrinches intensos o agresividad cuando se apaga el dispositivo.</div></div>
+      <div class="alert-card"><div class="alert-title">Bajo rendimiento</div><div class="alert-desc">Notas bajas, falta de atención, poco interés en tareas escolares.</div></div>
+      <div class="alert-card"><div class="alert-title">Aislamiento social</div><div class="alert-desc">Prefiere pantallas a jugar con otros niños o estar en familia.</div></div>
+      <div class="alert-card"><div class="alert-title">Retraso del lenguaje</div><div class="alert-desc">En menores de 3 años: vocabulario reducido o dificultad para comunicarse.</div></div>
+      <div class="alert-card"><div class="alert-title">Problemas visuales</div><div class="alert-desc">Quejas de ojos cansados, visión borrosa o dolores de cabeza frecuentes.</div></div>
+      <div class="alert-card"><div class="alert-title">Sedentarismo</div><div class="alert-desc">Poco movimiento físico, tendencia al sobrepeso desde temprana edad.</div></div>
+      <div class="alert-card"><div class="alert-title">Pérdida de interés</div><div class="alert-desc">Ya no disfruta actividades sin pantallas que antes le gustaban.</div></div>
+    </div>
+  </div>
+
+  <div id="reglas" class="panel">
+    <p style="font-size:13px;color:#666;margin-bottom:1rem;">Reglas simples que puedes adoptar en casa hoy mismo:</p>
+    <div class="rule-list">
+      <div class="rule"><div class="rule-num">1</div>Crea <strong style="font-weight:500;">zonas sin pantallas</strong>: la mesa del comedor y las habitaciones a la hora de dormir.</div>
+      <div class="rule"><div class="rule-num">2</div>Apaga dispositivos <strong style="font-weight:500;">1 hora antes de dormir</strong>. La luz azul afecta la calidad del sueño.</div>
+      <div class="rule"><div class="rule-num">3</div>Usa <strong style="font-weight:500;">controles parentales</strong> para filtrar contenido no apto para su edad.</div>
+      <div class="rule"><div class="rule-num">4</div>No uses pantallas como <strong style="font-weight:500;">premio ni castigo</strong> — refuerza una relación emocional con ellas.</div>
+      <div class="rule"><div class="rule-num">5</div>Habla sobre <strong style="font-weight:500;">privacidad en línea</strong>: no compartir datos ni hablar con desconocidos.</div>
+      <div class="rule"><div class="rule-num">6</div>Establece un <strong style="font-weight:500;">día sin pantallas a la semana</strong> para toda la familia.</div>
+      <div class="rule"><div class="rule-num">7</div>Asegúrate de que el tiempo en pantalla <strong style="font-weight:500;">no sustituya</strong> deportes, lectura ni tiempo social.</div>
+    </div>
+  </div>
+
+  <div class="source">Fuentes: OMS (2019–2020) · Mayo Clinic · Infobae / JAMA Pediatrics (2024) · ICR Cat (2024)</div>
+</div>
+<script>
+function show(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
